@@ -1,24 +1,9 @@
 <?php
-require 'phpqrcode/phpqrcode.php';
-
-$text = $argv[1];
+require __DIR__ . "/vendor/autoload.php";
 $filename = 'screenshot.png';
-QRcode::png($text, $filename, 1, 12, 1);
+$qrcode = new Zxing\QrReader($filename);
+$text = $qrcode->text(); //return decoded text from QR Code
 
-$item = [
-    "items" => [[
-		"type" =>  "file",
-        "title" => $text,
-        "subtitle" => "press Enter to copy",
-        "arg" => $filename,
-        "icon" => [
-            "type" => "file",
-            "path" => $filename
-        ],
-		"valid" => true,
-    ]],
-];
-
-echo json_encode($item, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+echo $text;
 ?>
 

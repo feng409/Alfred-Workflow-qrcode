@@ -1,9 +1,6 @@
 <?php
 require __DIR__ . '/phpqrcode/phpqrcode.php';
 
-var_dump($argv);
-exit();
-
 $text = $argv[1];
 $filename = 'screenshot.png';
 QRcode::png($text, $filename, 1, 12, 1);
