@@ -163,8 +163,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo 'hey' &gt; /tmp/hey
-/usr/sbin/screencapture -i screenshot.png</string>
+				<string>/usr/sbin/screencapture -i screenshot.png</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
